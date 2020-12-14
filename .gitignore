@@ -1,0 +1,8 @@
+# Project exclude paths
+/node_modules/
+/src/lib/error.d.ts
+/src/lib/error.js
+/src/lib/network.d.ts
+/src/lib/network.js
+/src/index.d.ts
+/src/index.js
