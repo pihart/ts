@@ -6,7 +6,7 @@ export declare class HTTPError extends ErrorWithCode {
 export declare class ResourceNotFoundException extends HTTPError {
     constructor(code?: number, message?: string);
 }
-export default class Network {
+export declare class Network {
     static loadJSON(filePath: string): Promise<any>;
     static fetch(url: string, prerequest?: (xhr: XMLHttpRequest) => void, method?: string, body?: null, resolveCondition?: Predicate<number>): Promise<XMLHttpRequest>;
 }

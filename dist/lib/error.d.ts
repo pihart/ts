@@ -1,4 +1,4 @@
-export default class CustomError extends Error {
+export declare class CustomError extends Error {
     constructor(message: string);
 }
 export declare class ErrorWithCode extends CustomError {

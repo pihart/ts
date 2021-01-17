@@ -1,2 +1,2 @@
-export { default as CustomError, ErrorWithCode } from "./lib/error";
-export { default as Network, HTTPError, ResourceNotFoundException } from "./lib/network";
+export * from "./lib/error";
+export * from "./lib/network";

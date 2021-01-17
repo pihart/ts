@@ -14,7 +14,7 @@ export class ResourceNotFoundException extends HTTPError {
   }
 }
 
-export default class Network {
+export class Network {
   static async loadJSON(filePath: string): Promise<any> {
     const xhr = await Network.fetch(filePath, (xhr) => {
       xhr.overrideMimeType("application/json");
