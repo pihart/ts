@@ -5,3 +5,5 @@ export declare class ErrorWithCode extends CustomError {
     code: number;
     constructor(code: number, message: string);
 }
+export declare class AssertionError extends CustomError {
+}

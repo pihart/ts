@@ -10,3 +10,5 @@ export class ErrorWithCode extends CustomError {
         this.code = code;
     }
 }
+export class AssertionError extends CustomError {
+}
