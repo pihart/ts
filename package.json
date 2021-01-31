@@ -8,6 +8,8 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "typedoc": "^0.20.19",
+    "typedoc-plugin-custom-tags": "^1.0.2",
     "typescript": "^4.1.3"
   },
   "keywords": [
