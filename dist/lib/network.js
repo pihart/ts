@@ -12,8 +12,11 @@ export class ResourceNotFoundException extends HTTPError {
 export class Network {
     /**
      * Fetch a network resource as JSON and return parsed
+     *
      * @param filePath The network URL of file to be fetched
      * @return The resource as parsed JSON object
+     *
+     * @JavaScript
      */
     static async loadJSON(filePath) {
         const xhr = await Network.fetch(filePath, {
@@ -30,8 +33,11 @@ export class Network {
      * Use instead of `window.fetch` because it
      * gives easy control of execution order and
      * rejects failed transactions.
+     *
      * @return The XHR as a Promise,
      * with a {@linkcode ResourceNotFoundException} in case of rejection
+     *
+     * @JavaScript
      */
     static async fetch(url, { prerequest = () => { }, method = "GET", body, resolveCondition = ({ status }) => status >= 200 && status < 300, } = {}) {
         const xhr = new XMLHttpRequest();

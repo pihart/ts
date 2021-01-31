@@ -21,8 +21,11 @@ export interface NetworkOptions {
 export declare class Network {
     /**
      * Fetch a network resource as JSON and return parsed
+     *
      * @param filePath The network URL of file to be fetched
      * @return The resource as parsed JSON object
+     *
+     * @JavaScript
      */
     static loadJSON(filePath: string): Promise<any>;
     /**
@@ -31,8 +34,11 @@ export declare class Network {
      * Use instead of `window.fetch` because it
      * gives easy control of execution order and
      * rejects failed transactions.
+     *
      * @return The XHR as a Promise,
      * with a {@linkcode ResourceNotFoundException} in case of rejection
+     *
+     * @JavaScript
      */
     static fetch(url: string, { prerequest, method, body, resolveCondition, }?: Partial<NetworkOptions>): Promise<XMLHttpRequest>;
 }
