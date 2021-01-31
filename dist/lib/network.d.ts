@@ -14,6 +14,6 @@ export interface NetworkOptions {
 }
 export declare class Network {
     static loadJSON(filePath: string): Promise<any>;
-    static fetch(url: string, { prerequest, method, body, resolveCondition, }: Partial<NetworkOptions>): Promise<XMLHttpRequest>;
+    static fetch(url: string, { prerequest, method, body, resolveCondition, }?: Partial<NetworkOptions>): Promise<XMLHttpRequest>;
 }
 export {};

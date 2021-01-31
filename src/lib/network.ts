@@ -48,7 +48,7 @@ export class Network {
       method = "GET",
       body,
       resolveCondition = ({ status }) => status >= 200 && status < 300,
-    }: Partial<NetworkOptions>
+    }: Partial<NetworkOptions> = {}
   ): Promise<XMLHttpRequest> {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
