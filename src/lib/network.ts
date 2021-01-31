@@ -27,7 +27,7 @@ interface NetworkOptions {
     | "TRACE"
     | "PATCH";
   body?: Document | BodyInit | null;
-  resolveCondition: Predicate<number>;
+  resolveCondition: Predicate<XMLHttpRequest>;
 }
 
 export class Network {
@@ -47,7 +47,7 @@ export class Network {
       prerequest = () => {},
       method = "GET",
       body,
-      resolveCondition = (status) => status >= 200 && status < 300,
+      resolveCondition = ({ status }) => status >= 200 && status < 300,
     }: Partial<NetworkOptions>
   ): Promise<XMLHttpRequest> {
     const xhr = new XMLHttpRequest();
@@ -58,7 +58,7 @@ export class Network {
     return new Promise((resolve, reject) => {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-          if (resolveCondition(xhr.status)) resolve(xhr);
+          if (resolveCondition(xhr)) resolve(xhr);
           else
             reject(new ResourceNotFoundException(xhr.status, xhr.statusText));
         }

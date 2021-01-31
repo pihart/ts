@@ -10,7 +10,7 @@ interface NetworkOptions {
     prerequest: (xhr: XMLHttpRequest) => void;
     method: "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "PATCH";
     body?: Document | BodyInit | null;
-    resolveCondition: Predicate<number>;
+    resolveCondition: Predicate<XMLHttpRequest>;
 }
 export declare class Network {
     static loadJSON(filePath: string): Promise<any>;
