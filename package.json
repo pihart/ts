@@ -10,9 +10,7 @@
     "docs": "node documentation.js"
   },
   "devDependencies": {
-    "typedoc-wrapper": "github:pihart/typedoc#v2.0.0",
-    "typedoc": "^0.20.19",
-    "typedoc-plugin-custom-tags": "^1.0.2",
+    "typedoc-wrapper": "github:pihart/typedoc#v3.0.0",
     "typescript": "^4.1.3"
   },
   "keywords": [
