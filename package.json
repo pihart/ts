@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "postbuild": "npx typedoc src/index.ts --hideGenerator --custom-tags-config typedoc/typedoc-tags-config.json --theme typedoc/theme"
   },
   "devDependencies": {
     "typedoc": "^0.20.19",
