@@ -9,6 +9,7 @@ npm i github:pihart/ts
 ```
 
 To lock a version (e.g. 2.1.0), use
+
 ```shell
 npm i github:pihart/ts#v2.1.0
 ```
