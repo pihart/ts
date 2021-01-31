@@ -6,7 +6,7 @@ export declare class HTTPError extends ErrorWithCode {
 export declare class ResourceNotFoundException extends HTTPError {
     constructor(code?: number, message?: string);
 }
-interface NetworkOptions {
+export interface NetworkOptions {
     prerequest: (xhr: XMLHttpRequest) => void;
     method: "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "PATCH";
     body?: Document | BodyInit | null;

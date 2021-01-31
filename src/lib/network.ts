@@ -14,7 +14,7 @@ export class ResourceNotFoundException extends HTTPError {
   }
 }
 
-interface NetworkOptions {
+export interface NetworkOptions {
   prerequest: (xhr: XMLHttpRequest) => void;
   method:
     | "GET"
