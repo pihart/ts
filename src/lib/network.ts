@@ -1,6 +1,5 @@
 import { ErrorWithCode } from "./error";
-
-type Predicate<T> = (value: T) => boolean;
+import { Predicate } from "./misc";
 
 export class HTTPError extends ErrorWithCode {
   constructor(code = 400, message = "HTTP Error") {
