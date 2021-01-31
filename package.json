@@ -6,9 +6,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "postbuild": "npx typedoc src/index.ts --hideGenerator --custom-tags-config typedoc/typedoc-tags-config.json --theme typedoc/theme"
+    "postbuild": "npm run docs",
+    "docs": "node documentation.js"
   },
   "devDependencies": {
+    "typedoc-wrapper": "github:pihart/typedoc#v2.0.0",
     "typedoc": "^0.20.19",
     "typedoc-plugin-custom-tags": "^1.0.2",
     "typescript": "^4.1.3"
