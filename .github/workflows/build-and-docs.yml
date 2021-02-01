@@ -23,5 +23,11 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run Deploy
-        run: npm run deploy
+      - name: Run Predeploy
+        run: npm run predeploy
+
+      - name: Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
