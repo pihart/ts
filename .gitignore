@@ -6,5 +6,5 @@
 /src/lib/network.js
 /src/index.d.ts
 /src/index.js
-/dist/
-/docs/
+/dist
+/docs
