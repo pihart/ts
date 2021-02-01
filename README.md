@@ -21,4 +21,5 @@ All library file exports are exported via [index.ts].
 [error.ts]: src/lib/error.ts
 [misc.ts]: src/lib/misc.ts
 [network.ts]: src/lib/network.ts
+
 [index.ts]: src/index.ts
