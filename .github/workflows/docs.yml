@@ -1,4 +1,4 @@
-name: Put Documentation on Github Pages
+name: Documentation
 
 on:
   release:
