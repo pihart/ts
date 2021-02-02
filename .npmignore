@@ -1,0 +1,5 @@
+/node_modules/
+/src/
+/.github/
+/docs/
+/tsconfig.json
