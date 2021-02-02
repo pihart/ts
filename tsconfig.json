@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "moduleResolution": "Node",
+    "module": "CommonJS",
     "outDir": "dist",
     "noImplicitAny": true,
     "noImplicitReturns": true,
