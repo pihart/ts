@@ -1,5 +1,5 @@
 {
-  "name": "ts",
+  "name": "@mehra/ts",
   "version": "2.1.1",
   "description": "Typescript extensions",
   "main": "dist/index.js",
