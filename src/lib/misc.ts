@@ -1,4 +1,4 @@
-export type Async<T = void> = T | Promise<T>;
+export type Async<T = void> = T | Promise<T> | PromiseLike<T>;
 export type Predicate<T> = (value: T) => boolean;
 
 /**
