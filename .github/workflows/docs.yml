@@ -21,8 +21,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run Predeploy
-        run: npm run predeploy
+      - name: Generate Documentation
+        run: npm run docs
 
       - name: Github Pages
         uses: peaceiris/actions-gh-pages@v3
