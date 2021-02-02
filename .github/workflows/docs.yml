@@ -1,4 +1,4 @@
-name: Build, Generate Documentation, and Deploy
+name: Generate Documentation
 
 on:
   push:
