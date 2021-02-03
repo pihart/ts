@@ -7,7 +7,6 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
     "sourceMap": false,
     "strict": true,
     "target": "es2017"
