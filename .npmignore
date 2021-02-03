@@ -1,5 +1,6 @@
 /node_modules/
 /src/
-/.github/
+/tests/
 /docs/
+/.github/
 /tsconfig.json
