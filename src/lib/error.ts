@@ -7,7 +7,7 @@
  * this will set the name to the minified name.
  */
 export class CustomError extends Error {
-  constructor(message: string) {
+  constructor(message?: string) {
     super(message);
     this.name = this.constructor.name;
   }
@@ -21,7 +21,7 @@ export class ErrorWithCode extends CustomError {
    * @param code `public code`
    * @param message passed to super
    */
-  constructor(public code: number, message: string) {
+  constructor(public code: number, message?: string) {
     super(message);
   }
 }
