@@ -25,5 +25,3 @@ export class ErrorWithCode extends CustomError {
     super(message);
   }
 }
-
-export class AssertionError extends CustomError {}
