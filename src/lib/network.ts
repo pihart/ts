@@ -18,6 +18,9 @@ export interface NetworkOptions {
    * Execute before sending the XHR
    */
   prerequest: (xhr: XMLHttpRequest) => void;
+  /**
+   * The HTTP method by which to make the request
+   */
   method:
     | "GET"
     | "HEAD"
@@ -37,7 +40,7 @@ export interface NetworkOptions {
 
 export class Network {
   /**
-   * Fetch a network resource as JSON and return parsed
+   * Fetch a network resource as JSON and return the parsed object
    *
    * @param filePath The network URL of file to be fetched
    * @return The resource as parsed JSON object

@@ -1,21 +1,29 @@
 import { CustomError } from "./error";
 import { Assert } from "./assert";
 
+/**
+ * Use when an input doesn't adhere to a required spec
+ */
 export class MalformedExpressionException extends CustomError {}
 
 declare const emailDisc: unique symbol;
+/**
+ * A nominal string type for emails
+ */
 export type Email = string & {
   readonly [emailDisc]: unique symbol;
 };
+
 export class InvalidEmailException extends MalformedExpressionException {}
 
 export namespace Email {
   /**
    * RFC 5322 email validation
-   * https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
-   * https://stackoverflow.com/a/201378/6698132
-   * https://emailregex.com/
-   * https://www.ietf.org/rfc/rfc5322.txt
+   * * https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
+   * * https://stackoverflow.com/a/201378/6698132
+   * * https://emailregex.com/
+   * * https://www.ietf.org/rfc/rfc5322.txt
+   * @JavaScript
    * @warn Not very restrictive; only checks syntax
    */
   export const roughValidate = (str: string): str is Email => {
@@ -26,8 +34,9 @@ export namespace Email {
 
   /**
    * Assert using RFC 5322 email validation
-   * @throws InvalidEmailException
-   * @warn See {@link roughValidate}
+   * @JavaScript
+   * @throws {@linkcode InvalidEmailException}
+   * @warn Not restrictive; see {@linkcode roughValidate}
    */
   export const roughAssert = (str: string): asserts str is Email => {
     Assert(roughValidate(str), InvalidEmailException);

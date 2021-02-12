@@ -3,8 +3,8 @@ import { CustomError } from "./error";
 export class AssertionError extends CustomError {}
 
 /**
- * Asserts bool
- * @throws errorConstructor
+ * Asserts `bool`
+ * @throws `errorConstructor`
  */
 export function Assert(
   bool: boolean,
