@@ -120,9 +120,20 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">Async&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/misc.ts#L1">src/lib/misc.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/misc.ts#L7">src/lib/misc.ts:7</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Types that unwrap (via <code>await</code> or <code>.then</code>) to {@typeparam T}</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>An interface where functions are allowed to be asynchronous (<code>Promise</code>-returning),
+								but do not need to be</p>
+							</dd>
+						</dl>
+					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -133,12 +144,17 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="email" class="tsd-anchor"></a>
 					<h3>Email</h3>
-					<div class="tsd-signature tsd-kind-icon">Email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>__@emailDisc@22788<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">Email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>__@emailDisc@22790<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/discrimination.ts#L7">src/lib/discrimination.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/email.ts#L8">src/lib/email.ts:8</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A nominal string type for emails</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="issubtype" class="tsd-anchor"></a>
@@ -146,9 +162,15 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">Is<wbr>Sub<wbr>Type&lt;A, B&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">A</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">B</span><span class="tsd-signature-symbol"> ? </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/subtype.ts#L1">src/lib/subtype.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/subtype.ts#L5">src/lib/subtype.ts:5</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type <code>true</code> if {@typeparam A} is a subtype of {@typeparam B};
+							otherwise type <code>false</code>.</p>
+						</div>
+					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -165,7 +187,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">Non<wbr>Empty<wbr>Array&lt;T, U&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/misc.ts#L13">src/lib/misc.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/misc.ts#L19">src/lib/misc.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -187,7 +209,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 							<h4>U = <span class="tsd-signature-type">T</span></h4>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>The type of the remaining elements, if different from T</p>
+									<p>The type of the remaining elements, if different from {@typeparam T}</p>
 								</div>
 							</div>
 						</li>
@@ -199,7 +221,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">Predicate&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/misc.ts#L2">src/lib/misc.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/misc.ts#L8">src/lib/misc.ts:8</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -236,9 +258,15 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">Sub<wbr>Type&lt;A, B&gt;<span class="tsd-signature-symbol">:</span> <a href="modules.html#issubtype" class="tsd-signature-type" data-tsd-kind="Type alias">IsSubType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">B</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> ? </span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">never</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/subtype.ts#L2">src/lib/subtype.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/subtype.ts#L10">src/lib/subtype.ts:10</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type {@typeparam A} if {@typeparam A} is a subtype of {@typeparam B};
+							otherwise type <code>never</code>.</p>
+						</div>
+					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -262,16 +290,16 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pihart/ts/blob/dc7e29b/src/lib/assert.ts#L9">src/lib/assert.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/pihart/ts/blob/1719d55/src/lib/assert.ts#L9">src/lib/assert.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Asserts bool</p>
+									<p>Asserts <code>bool</code></p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
-									<dd><p>errorConstructor</p>
+									<dd><p><code>errorConstructor</code></p>
 									</dd>
 								</dl>
 							</div>
