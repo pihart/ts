@@ -3,6 +3,7 @@ export * from "./lib/discrimination";
 export * from "./lib/email";
 export * from "./lib/error";
 export * from "./lib/network";
+export * from "./lib/relations";
 export * from "./lib/subtype";
 
 export * from "./lib/misc";
