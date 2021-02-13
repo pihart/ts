@@ -4,6 +4,11 @@ export type PartialRecord<A extends keyof any, B> = Partial<Record<A, B>>;
  * A function {@typeparam BaseSet}^2 --> {@TypeParam ValueSet}
  *
  * Assigns a member of {@typeparam ValueSet} to each member of {@typeparam BaseSet}^2
+ *
+ * Use double array syntax to extract members:
+ * ```js
+ * matrix[X][Y]
+ * ```
  */
 export type Matrix<BaseSet extends keyof any, ValueSet> = Record<
   BaseSet,
@@ -13,7 +18,12 @@ export type Matrix<BaseSet extends keyof any, ValueSet> = Record<
 /**
  * A partial function {@typeparam BaseSet}^2 ~~> {@TypeParam ValueSet}
  *
- * Optionally assigns a member of {@typeparam ValueSet} to each member of {@typeparam BaseSet}^2
+ * Optionally assigns a member of {@typeparam ValueSet} to each member of {@typeparam BaseSet}^2.
+ *
+ * Use optional double array syntax to extract members:
+ * ```js
+ * matrix[X]?.[Y]
+ * ```
  */
 export type PartialMatrix<BaseSet extends keyof any, ValueSet> = PartialRecord<
   BaseSet,
@@ -24,6 +34,11 @@ export type PartialMatrix<BaseSet extends keyof any, ValueSet> = PartialRecord<
  * Encodes multiple (not necessarily symmetric) relations of members of {@typeparam BaseSet}
  *
  * For each member of {@typeparam BaseSet}, allows to write in which members of {@typeparam ValueSet}
+ *
+ * Use object-relation syntax to extract members:
+ * ```js
+ * invMatrix[X]["rel1"]
+ * ```
  *
  * @typeparam BaseSet The set to describe relations of
  * @typeparam ValueSet Contains the names of the relations
