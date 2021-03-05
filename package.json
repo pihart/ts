@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build",
-    "test": "npm run test:types && npm run test:js",
+    "test": "npm run test:types && npm run test:js && npm run docs",
     "test:types": "echo Skipping check-dts || check-dts tests",
     "pretest:js": "npm run build",
     "test:js": "jest",
