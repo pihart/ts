@@ -18,7 +18,6 @@ export namespace Email {
    * * https://stackoverflow.com/a/201378/6698132
    * * https://emailregex.com/
    * * https://www.ietf.org/rfc/rfc5322.txt
-   * @JavaScript
    * @warn Not very restrictive; only checks syntax
    */
   export const roughValidate = (str: string): str is Email => {
@@ -29,7 +28,6 @@ export namespace Email {
 
   /**
    * Assert using RFC 5322 email validation
-   * @JavaScript
    * @throws {@linkcode InvalidEmailException}
    * @warn Not restrictive; see {@linkcode roughValidate}
    */

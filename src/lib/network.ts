@@ -44,8 +44,6 @@ export class Network {
    *
    * @param filePath The network URL of file to be fetched
    * @return The resource as parsed JSON object
-   *
-   * @JavaScript
    */
   static async loadJSON(filePath: string): Promise<any> {
     const xhr = await Network.fetch(filePath, {
@@ -66,8 +64,6 @@ export class Network {
    *
    * @return The XHR as a Promise,
    * with a {@linkcode ResourceNotFoundException} in case of rejection
-   *
-   * @JavaScript
    */
   static async fetch(
     url: string,
