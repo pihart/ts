@@ -8,7 +8,7 @@
     "build": "tsc",
     "prepublish": "npm run build",
     "test": "npm run test:types && npm run test:js && npm run docs",
-    "test:types": "echo Skipping check-dts || check-dts tests",
+    "test:types": "cd tests && tsc && cd ..",
     "pretest:js": "npm run build",
     "test:js": "jest",
     "docs": "tdx ./src/index.ts"
