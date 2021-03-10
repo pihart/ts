@@ -105,3 +105,79 @@ export type IsNonEmptyAlphaNum<T extends string> = DFAAccepts<
   NonEmptyAlphaNumDFA,
   T
 >;
+
+/**
+ * Accepts strings matching
+ * `/^\d*$/`
+ */
+type DirectIntDFA = KleeneStarDFA<NumChar>;
+
+/**
+ * Does {@typeparam T} match `/^\d*$/`?
+ * That is, is it a string composed of only English digits?
+ *
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
+ */
+export type IsDirectInt<T extends string> = DFAAccepts<DirectIntDFA, T>;
+
+/**
+ * Accepts strings matching
+ * `/^\d+([eE][+-]?\d+)?$/`
+ */
+interface UnsignedIntDecimalDFA {
+  startState: "integer part first";
+  acceptStates: "integer part" | "exponential part";
+  transitions: {
+    "integer part first": Record<Digit, "integer part"> &
+      Record<string, "fail">;
+    "integer part": Record<Digit, "integer part"> &
+      Record<"e" | "E", "signed exponential part"> &
+      Record<string, "fail">;
+
+    "signed exponential part": Record<"+" | "-", "exponential part first"> &
+      Record<Digit, "exponential part"> &
+      Record<string, "fail">;
+    "exponential part first": Record<Digit, "exponential part"> &
+      Record<string, "fail">;
+    "exponential part": Record<Digit, "exponential part"> &
+      Record<string, "fail">;
+
+    fail: Record<string, "fail">;
+  };
+}
+
+/**
+ * Does {@typeparam T} match `/^\d+([eE][+-]?\d+)?$/`?
+ * That is, is it a common decimal or decimal-scientific form of an unsigned integer?
+ *
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
+ */
+export type IsUnsignedIntDecimal<T extends string> = DFAAccepts<
+  UnsignedIntDecimalDFA,
+  T
+>;
+
+/**
+ * Accepts strings matching
+ * `/[+-]?^\d+([eE][+-]?\d+)?$/`
+ */
+interface SignedIntDecimalDFA {
+  startState: "signed integer part";
+  acceptStates: "integer part" | "exponential part";
+  transitions: {
+    "signed integer part": Record<"+" | "-", "integer part first"> &
+      Record<Digit, "integer part"> &
+      Record<string, "fail">;
+  } & UnsignedIntDecimalDFA["transitions"];
+}
+
+/**
+ * Does {@typeparam T} match `/^[+-]?\d+([eE][+-]?\d+)?$/`?
+ * That is, is it a common decimal or decimal-scientific form of an (possibly signed) integer?
+ *
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
+ */
+export type IsIntDecimal<T extends string> = DFAAccepts<SignedIntDecimalDFA, T>;
