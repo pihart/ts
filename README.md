@@ -4,7 +4,7 @@
 [![test status](https://github.com/pihart/ts/workflows/Node.js%20CI/badge.svg)][source]
 [![documentation status](https://github.com/pihart/ts/workflows/Documentation/badge.svg)][docs]
 
-Simple TypeScript utilities and (JavaScript) extensions I commonly use.
+TypeScript utilities and (JavaScript) extensions I commonly use.
 
 ## Installation
 
