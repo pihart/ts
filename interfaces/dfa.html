@@ -6,7 +6,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NetworkOptions | @mehra/ts</title>
+	<title>DFA | @mehra/ts</title>
 	<meta name="description" content="Documentation for @mehra/ts">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -61,10 +61,10 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<a href="../modules.html">@mehra/ts</a>
 				</li>
 				<li>
-					<a href="networkoptions.html">NetworkOptions</a>
+					<a href="dfa.html">DFA</a>
 				</li>
 			</ul>
-			<h1>Interface NetworkOptions</h1>
+			<h1>Interface DFA</h1>
 		</div>
 	</div>
 </header>
@@ -75,7 +75,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">NetworkOptions</span>
+						<span class="target">DFA</span>
 					</li>
 				</ul>
 			</section>
@@ -86,10 +86,9 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="networkoptions.html#body" class="tsd-kind-icon">body</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="networkoptions.html#method" class="tsd-kind-icon">method</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="networkoptions.html#prerequest" class="tsd-kind-icon">prerequest</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="networkoptions.html#resolvecondition" class="tsd-kind-icon">resolve<wbr>Condition</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dfa.html#acceptstates" class="tsd-kind-icon">accept<wbr>States</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dfa.html#startstate" class="tsd-kind-icon">start<wbr>State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dfa.html#transitions" class="tsd-kind-icon">transitions</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,80 +97,34 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="body" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> body</h3>
-					<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BufferSource</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FormData</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">URLSearchParams</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadableStream</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></div>
+					<a name="acceptstates" class="tsd-anchor"></a>
+					<h3>accept<wbr>States</h3>
+					<div class="tsd-signature tsd-kind-icon">accept<wbr>States<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L34">src/lib/network.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/dfa.ts#L15">src/lib/dfa.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="method" class="tsd-anchor"></a>
-					<h3>method</h3>
-					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;GET&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;HEAD&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;POST&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;PUT&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;DELETE&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;CONNECT&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;OPTIONS&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;TRACE&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;PATCH&quot;</span></div>
+					<a name="startstate" class="tsd-anchor"></a>
+					<h3>start<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L24">src/lib/network.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/dfa.ts#L14">src/lib/dfa.ts:14</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The HTTP method by which to make the request</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="prerequest" class="tsd-anchor"></a>
-					<h3>prerequest</h3>
-					<div class="tsd-signature tsd-kind-icon">prerequest<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<a name="transitions" class="tsd-anchor"></a>
+					<h3>transitions</h3>
+					<div class="tsd-signature tsd-kind-icon">transitions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L20">src/lib/network.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/dfa.ts#L16">src/lib/dfa.ts:16</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Execute before sending the XHR</p>
-						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-signature">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="resolvecondition" class="tsd-anchor"></a>
-					<h3>resolve<wbr>Condition</h3>
-					<div class="tsd-signature tsd-kind-icon">resolve<wbr>Condition<span class="tsd-signature-symbol">:</span> <a href="../modules.html#predicate" class="tsd-signature-type" data-tsd-kind="Type alias">Predicate</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">XMLHttpRequest</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L38">src/lib/network.ts:38</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Determines when to resolve the Promise instead of rejecting</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -209,36 +162,33 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<li class=" tsd-kind-class">
 						<a href="../classes/resourcenotfoundexception.html" class="tsd-kind-icon">Resource<wbr>Not<wbr>Found<wbr>Exception</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="dfa.html" class="tsd-kind-icon">DFA</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dfa.html#acceptstates" class="tsd-kind-icon">accept<wbr>States</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dfa.html#startstate" class="tsd-kind-icon">start<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dfa.html#transitions" class="tsd-kind-icon">transitions</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="kleeneplusdfa.html" class="tsd-kind-icon">Kleene<wbr>PlusDFA</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="kleenestardfa.html" class="tsd-kind-icon">Kleene<wbr>StarDFA</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="networkoptions.html" class="tsd-kind-icon">Network<wbr>Options</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="networkoptions.html#body" class="tsd-kind-icon">body</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="networkoptions.html#method" class="tsd-kind-icon">method</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="networkoptions.html#prerequest" class="tsd-kind-icon">prerequest</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="networkoptions.html#resolvecondition" class="tsd-kind-icon">resolve<wbr>Condition</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-type-alias">
 						<a href="../modules.html#alphachar" class="tsd-kind-icon">Alpha<wbr>Char</a>
 					</li>
