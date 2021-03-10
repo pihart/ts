@@ -66,3 +66,42 @@ export type IsAlpha<T extends string> = DFAAccepts<AlphaDFA, T>;
  * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
  */
 export type IsNonEmptyAlpha<T extends string> = DFAAccepts<NonEmptyAlphaDFA, T>;
+
+/**
+ * Arabic numerals (base 10 digits)
+ */
+export type NumChar = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+/**
+ * Arabic numerals (base 10 digits)
+ */
+export type Digit = NumChar;
+
+/**
+ * A character matching
+ * `/^[a-zA-Z\d]$/`
+ */
+export type AlphaNumChar = AlphaChar | NumChar;
+
+type AlphaNumDFA = KleeneStarDFA<AlphaNumChar>;
+type NonEmptyAlphaNumDFA = KleenePlusDFA<AlphaNumChar>;
+
+/**
+ * Does {@typeparam T} match `/^[a-zA-Z\d]*$/`?
+ * That is, is it a string composed of only English letters and Arabic numerals?
+ *
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
+ */
+export type IsAlphaNum<T extends string> = DFAAccepts<AlphaNumDFA, T>;
+
+/**
+ * Does {@typeparam T} match `/^[a-zA-Z\d]+$/`?
+ * That is, is it a non-empty string composed of only English letters and Arabic numerals?
+ *
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
+ */
+export type IsNonEmptyAlphaNum<T extends string> = DFAAccepts<
+  NonEmptyAlphaNumDFA,
+  T
+>;
