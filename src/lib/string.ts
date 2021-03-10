@@ -108,13 +108,13 @@ export type IsNonEmptyAlphaNum<T extends string> = DFAAccepts<
 
 /**
  * Accepts strings matching
- * `/^\d*$/`
+ * `/^\d+$/`
  */
-type DirectIntDFA = KleeneStarDFA<NumChar>;
+type DirectIntDFA = KleenePlusDFA<NumChar>;
 
 /**
- * Does {@typeparam T} match `/^\d*$/`?
- * That is, is it a string composed of only English digits?
+ * Does {@typeparam T} match `/^\d+$/`?
+ * That is, is it a non-empty string composed of only Arabic numerals?
  *
  * Type `true`, `false`, or `never`.
  * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
