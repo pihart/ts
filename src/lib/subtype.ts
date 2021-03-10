@@ -1,9 +1,9 @@
+import { TestedType } from "./misc";
+
 /**
  * Type `true` if {@typeparam A} is a subtype of {@typeparam B};
  * otherwise type `false`.
  */
-import {TestedType} from "./misc";
-
 export type IsSubType<A, B> = A extends B ? true : false;
 /**
  * Type {@typeparam A} if {@typeparam A} is a subtype of {@typeparam B};
