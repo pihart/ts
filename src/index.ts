@@ -1,5 +1,6 @@
 export * from "./lib/assert";
 export * from "./lib/discrimination";
+export * from "./lib/dfa";
 export * from "./lib/email";
 export * from "./lib/error";
 export * from "./lib/network";
