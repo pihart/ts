@@ -1,4 +1,5 @@
 import { DFAAccepts } from "./dfa";
+import { KleenePlusDFA, KleeneStarDFA } from "./regex";
 
 type A_Z_Upper =
   | "A"
@@ -40,35 +41,20 @@ export type AlphaChar = A_Z_Upper | A_Z_Lower;
  * Accepts strings matching
  * `/^[a-zA-Z]*$/`
  */
-interface AlphaDFA {
-  startState: "0";
-  acceptStates: "0";
-  transitions: {
-    "0": Record<AlphaChar, "0"> & Record<string, "fail">;
-    fail: Record<string, "fail">;
-  };
-}
+type AlphaDFA = KleeneStarDFA<AlphaChar>;
 
 /**
  * Accepts strings matching
  * `/^[a-zA-Z]+$/`
  */
-interface NonEmptyAlphaDFA {
-  startState: "0";
-  acceptStates: "1";
-  transitions: {
-    "0": Record<AlphaChar, "1"> & Record<string, "fail">;
-    "1": Record<AlphaChar, "1"> & Record<string, "fail">;
-    fail: Record<string, "fail">;
-  };
-}
+type NonEmptyAlphaDFA = KleenePlusDFA<AlphaChar>;
 
 /**
  * Does {@typeparam T} match `/^[a-zA-Z]*$/`?
  * That is, is it a string composed of only English letters.
  *
- * Type `true` or type `false`.
- * Will broaden to `boolean` if you pass a union type where not all have the same value.
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
  */
 export type IsAlpha<T extends string> = DFAAccepts<AlphaDFA, T>;
 
@@ -76,7 +62,7 @@ export type IsAlpha<T extends string> = DFAAccepts<AlphaDFA, T>;
  * Does {@typeparam T} match `/^[a-zA-Z]+$/`?
  * That is, is it a non-empty string composed of only English letters.
  *
- * Type `true` or type `false`.
- * Will broaden to `boolean` if you pass a union type where not all have the same value.
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
  */
 export type IsNonEmptyAlpha<T extends string> = DFAAccepts<NonEmptyAlphaDFA, T>;

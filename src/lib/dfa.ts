@@ -29,8 +29,8 @@ type AcceptsImpl<
 /**
  * Does {@typeparam DfaT} accept {@typeparam InputT}?
  *
- * Type `true` or type `false`.
- * Will broaden to `boolean` if you pass a union type where not all have the same value.
+ * Type `true`, `false`, or `never`.
+ * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
  */
 export type DFAAccepts<DfaT extends DFA, InputT extends string> = AcceptsImpl<
   DfaT,
