@@ -17,3 +17,8 @@ export type Predicate<T> = (value: T) => boolean;
  * @typeparam U The type of the remaining elements, if different from {@typeparam T}
  */
 export type NonEmptyArray<T, U = T> = [T, ...U[]];
+
+/**
+ * {@typeparam T} if {@typeparam Bool}, else `never`
+ */
+export type TestedType<T, Bool> = Bool extends true ? T : never;
