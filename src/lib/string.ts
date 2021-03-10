@@ -51,7 +51,7 @@ type NonEmptyAlphaDFA = KleenePlusDFA<AlphaChar>;
 
 /**
  * Does {@typeparam T} match `/^[a-zA-Z]*$/`?
- * That is, is it a string composed of only English letters.
+ * That is, is it a string composed of only English letters?
  *
  * Type `true`, `false`, or `never`.
  * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
@@ -60,7 +60,7 @@ export type IsAlpha<T extends string> = DFAAccepts<AlphaDFA, T>;
 
 /**
  * Does {@typeparam T} match `/^[a-zA-Z]+$/`?
- * That is, is it a non-empty string composed of only English letters.
+ * That is, is it a non-empty string composed of only English letters?
  *
  * Type `true`, `false`, or `never`.
  * Will broaden to `boolean` if you pass a union type where at least one gives `true` and one gives `false`.
