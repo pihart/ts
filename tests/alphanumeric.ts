@@ -178,3 +178,48 @@ type Alphanumeric =
   // Make sure not true nor never
   const b: ExpectFalse = false;
 }
+
+/**
+ * @Test UInt is IsUnsignedIntDecimal
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectTrue = IsUnsignedIntDecimal<UInt>;
+
+  // Make sure not false nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectTrue = false;
+
+  // Make sure not false nor never
+  const b: ExpectTrue = true;
+}
+
+/**
+ * @Test Int is IntDecimal
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectTrue = IsIntDecimal<Int>;
+
+  // Make sure not false nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectTrue = false;
+
+  // Make sure not false nor never
+  const b: ExpectTrue = true;
+}
+
+/**
+ * @Test Alpha, Alphanumeric are not IntDecimal
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectFalse = IsIntDecimal<Alpha | Alphanumeric>;
+
+  // Make sure not true nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectFalse = true;
+
+  // Make sure not true nor never
+  const b: ExpectFalse = false;
+}
