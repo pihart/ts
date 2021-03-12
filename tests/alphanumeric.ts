@@ -77,7 +77,6 @@ type Int = UInt | SignedInt;
 type Alphanumeric =
   | "ZC6eb5pd2S"
   | "vnNufQP6zD"
-  | "COFRWhBxUgf"
   | "2SjplvIjeGy"
   | "Y933ojY5qZq"
   | "WGcN3N5ClEq"
@@ -96,7 +95,6 @@ type Alphanumeric =
   | "63Kl0m9T7L6"
   | "p1tTp6HJ909"
   | "024i312ec96B"
-  | "ePTokwaquUW"
   | "TgSe3YJ574"
   | "5juKt9EMhOo";
 
@@ -141,6 +139,21 @@ type Alphanumeric =
 
   // Make sure not false nor never
   const b: ExpectTrue = true;
+}
+
+/**
+ * @Test Numeric, Alphanumeric, NumChar, Digit are not Alpha
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectFalse = IsAlpha<Numeric | Alphanumeric | NumChar | Digit>;
+
+  // Make sure not true nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectFalse = true;
+
+  // Make sure not true nor never
+  const b: ExpectFalse = false;
 }
 
 /**
