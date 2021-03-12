@@ -77,7 +77,6 @@ type Int = UInt | SignedInt;
 type Alphanumeric =
   | "ZC6eb5pd2S"
   | "vnNufQP6zD"
-  | "COFRWhBxUgf"
   | "2SjplvIjeGy"
   | "Y933ojY5qZq"
   | "WGcN3N5ClEq"
@@ -96,7 +95,6 @@ type Alphanumeric =
   | "63Kl0m9T7L6"
   | "p1tTp6HJ909"
   | "024i312ec96B"
-  | "ePTokwaquUW"
   | "TgSe3YJ574"
   | "5juKt9EMhOo";
 
@@ -144,6 +142,21 @@ type Alphanumeric =
 }
 
 /**
+ * @Test Numeric, Alphanumeric, NumChar, Digit are not Alpha
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectFalse = IsAlpha<Numeric | Alphanumeric | NumChar | Digit>;
+
+  // Make sure not true nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectFalse = true;
+
+  // Make sure not true nor never
+  const b: ExpectFalse = false;
+}
+
+/**
  * @Test AlphaChar, NumChar, AlphaNumChar, Digit, Alpha, Numeric, Alphanumeric are AlphaNum
  */
 {
@@ -170,6 +183,51 @@ type Alphanumeric =
     | IsAlpha<considered>
     | IsDirectInt<considered>
     | IsAlphaNum<considered>;
+
+  // Make sure not true nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectFalse = true;
+
+  // Make sure not true nor never
+  const b: ExpectFalse = false;
+}
+
+/**
+ * @Test UInt is IsUnsignedIntDecimal
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectTrue = IsUnsignedIntDecimal<UInt>;
+
+  // Make sure not false nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectTrue = false;
+
+  // Make sure not false nor never
+  const b: ExpectTrue = true;
+}
+
+/**
+ * @Test Int is IntDecimal
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectTrue = IsIntDecimal<Int>;
+
+  // Make sure not false nor boolean
+  // @ts-expect-error TS2322
+  const a: ExpectTrue = false;
+
+  // Make sure not false nor never
+  const b: ExpectTrue = true;
+}
+
+/**
+ * @Test Alpha, Alphanumeric are not IntDecimal
+ */
+{
+  // Could be true, false, boolean, never
+  type ExpectFalse = IsIntDecimal<Alpha | Alphanumeric>;
 
   // Make sure not true nor boolean
   // @ts-expect-error TS2322
