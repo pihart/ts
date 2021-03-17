@@ -103,7 +103,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BufferSource</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">FormData</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">URLSearchParams</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReadableStream</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L34">src/lib/network.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/016ad2d/src/lib/network.ts#L34">src/lib/network.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -113,7 +113,7 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;GET&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;HEAD&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;POST&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;PUT&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;DELETE&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;CONNECT&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;OPTIONS&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;TRACE&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;PATCH&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L24">src/lib/network.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/016ad2d/src/lib/network.ts#L24">src/lib/network.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -128,12 +128,12 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">prerequest<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L20">src/lib/network.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/016ad2d/src/lib/network.ts#L20">src/lib/network.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Execute before sending the XHR</p>
+							<p>Execute after opening but before sending the XHR {@param xhr}</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -164,13 +164,14 @@ https://github.com/TypeStrong/typedoc-default-themes/blob/0fa4edd7ab0b45c7d33cf2
 					<div class="tsd-signature tsd-kind-icon">resolve<wbr>Condition<span class="tsd-signature-symbol">:</span> <a href="../modules.html#predicate" class="tsd-signature-type" data-tsd-kind="Type alias">Predicate</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">XMLHttpRequest</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pihart/ts/blob/9e1bb67/src/lib/network.ts#L38">src/lib/network.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/pihart/ts/blob/016ad2d/src/lib/network.ts#L40">src/lib/network.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Determines when to resolve the Promise instead of rejecting</p>
 						</div>
+						<p>Defaults to ensuring the status is in [200, 300)</p>
 					</div>
 				</section>
 			</section>
