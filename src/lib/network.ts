@@ -112,6 +112,8 @@ export class Network {
   /**
    * Makes a network request to a resource and returns its data parsed as JSON
    *
+   * Use instead of `window.fetch` because it rejects failed transactions.
+   *
    * @return The result of the request to the resource, parsed as JSON, if it is `ok`
    * @throws [[`ResourceNotFoundException`]] if not `ok`
    */
@@ -123,7 +125,7 @@ export class Network {
   /**
    * Makes a network request
    *
-   * `window.fetch` but with error checking
+   * Use instead of `window.fetch` because it rejects failed transactions.
    *
    * @return The result of `window.fetch`, if it is `ok`
    * @throws [[`ResourceNotFoundException`]] if not `ok`
