@@ -13,9 +13,6 @@ export class ResourceNotFoundException extends HTTPError {
   }
 }
 
-/**
- * @deprecated
- */
 export interface XHRNetworkOptions {
   /**
    * Execute after opening but before sending the XHR {@param xhr}
