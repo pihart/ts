@@ -47,7 +47,7 @@ export class Network {
    * @param filePath The network URL of file to be fetched
    * @return The resource as parsed JSON object
    * @throws
-   * `ResourceNotFoundException` if the request fails,
+   * [[`ResourceNotFoundException`]] if the request fails,
    * defined by the status being in [200, 300)
    * @warn Currently doesn't implement timeout logic
    */
@@ -72,7 +72,7 @@ export class Network {
    * The XHR as a Promise,
    * with a [[`ResourceNotFoundException`]] in case of rejection
    * @throws
-   * `ResourceNotFoundException` if the request fails,
+   * [[`ResourceNotFoundException`]] if the request fails,
    * as defined by {@param resolveCondition}
    * @warn Currently doesn't implement timeout logic
    */
