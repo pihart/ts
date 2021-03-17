@@ -13,7 +13,10 @@ export class ResourceNotFoundException extends HTTPError {
   }
 }
 
-export interface NetworkOptions {
+/**
+ * @deprecated
+ */
+export interface XHRNetworkOptions {
   /**
    * Execute after opening but before sending the XHR {@param xhr}
    */
@@ -44,15 +47,21 @@ export class Network {
   /**
    * Fetch a network resource as JSON and return the parsed object
    *
+   * Use instead of `window.fetch` because it
+   * rejects failed transactions
+   * and provides a legacy XHR interface.
+   * If the legacy interface is not a concern, use [[`Network.loadJSON`]].
+   *
    * @param filePath The network URL of file to be fetched
    * @return The resource as parsed JSON object
    * @throws
    * [[`ResourceNotFoundException`]] if the request fails,
    * defined by the status being in [200, 300)
-   * @warn Currently doesn't implement timeout logic
+   * @warn Doesn't implement timeout logic
+   * @deprecated
    */
-  static async loadJSON(filePath: string): Promise<any> {
-    const xhr = await Network.fetch(filePath, {
+  static async loadJSONXHR(filePath: string): Promise<any> {
+    const xhr = await Network.fetchXHR(filePath, {
       prerequest: (xhr) => {
         xhr.overrideMimeType("application/json");
         xhr.responseType = "json";
@@ -65,8 +74,9 @@ export class Network {
    * `Promise` wrapper for `XMLHttpRequest`
    *
    * Use instead of `window.fetch` because it
-   * gives easy control of execution order and
-   * rejects failed transactions.
+   * rejects failed transactions
+   * and provides a legacy XHR interface.
+   * If the legacy interface is not a concern, use [[`Network.fetch`]].
    *
    * @return
    * The XHR as a Promise,
@@ -74,16 +84,17 @@ export class Network {
    * @throws
    * [[`ResourceNotFoundException`]] if the request fails,
    * as defined by {@param resolveCondition}
-   * @warn Currently doesn't implement timeout logic
+   * @warn Doesn't implement timeout logic
+   * @deprecated
    */
-  static async fetch(
+  static async fetchXHR(
     url: string,
     {
       prerequest = () => {},
       method = "GET",
       body,
       resolveCondition = ({ status }) => status >= 200 && status < 300,
-    }: Partial<NetworkOptions> = {}
+    }: Partial<XHRNetworkOptions> = {}
   ): Promise<XMLHttpRequest> {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
@@ -99,5 +110,33 @@ export class Network {
         }
       };
     });
+  }
+
+  /**
+   * Makes a network request to a resource and returns its data parsed as JSON
+   *
+   * @return The result of the request to the resource, parsed as JSON, if it is `ok`
+   * @throws [[`ResourceNotFoundException`]] if not `ok`
+   */
+  static async loadJSON(input: RequestInfo, init?: RequestInit): Promise<any> {
+    const response = await Network.fetch(input, init);
+    return response.json();
+  }
+
+  /**
+   * Makes a network request
+   *
+   * `window.fetch` but with error checking
+   *
+   * @return The result of `window.fetch`, if it is `ok`
+   * @throws [[`ResourceNotFoundException`]] if not `ok`
+   */
+  static async fetch(
+    input: RequestInfo,
+    init?: RequestInit
+  ): Promise<Response> {
+    const response = await window.fetch(input, init);
+    if (response.ok) return response;
+    throw new ResourceNotFoundException(response.status, response.statusText);
   }
 }
