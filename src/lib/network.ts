@@ -15,7 +15,7 @@ export class ResourceNotFoundException extends HTTPError {
 
 export interface NetworkOptions {
   /**
-   * Execute before sending the XHR
+   * Execute after opening but before sending the XHR {@param xhr}
    */
   prerequest: (xhr: XMLHttpRequest) => void;
   /**
@@ -34,6 +34,8 @@ export interface NetworkOptions {
   body?: Document | BodyInit | null;
   /**
    * Determines when to resolve the Promise instead of rejecting
+   *
+   * Defaults to ensuring the status is in [200, 300)
    */
   resolveCondition: Predicate<XMLHttpRequest>;
 }
@@ -44,6 +46,10 @@ export class Network {
    *
    * @param filePath The network URL of file to be fetched
    * @return The resource as parsed JSON object
+   * @throws
+   * [[`ResourceNotFoundException`]] if the request fails,
+   * defined by the status being in [200, 300)
+   * @warn Currently doesn't implement timeout logic
    */
   static async loadJSON(filePath: string): Promise<any> {
     const xhr = await Network.fetch(filePath, {
@@ -62,8 +68,13 @@ export class Network {
    * gives easy control of execution order and
    * rejects failed transactions.
    *
-   * @return The XHR as a Promise,
-   * with a {@linkcode ResourceNotFoundException} in case of rejection
+   * @return
+   * The XHR as a Promise,
+   * with a [[`ResourceNotFoundException`]] in case of rejection
+   * @throws
+   * [[`ResourceNotFoundException`]] if the request fails,
+   * as defined by {@param resolveCondition}
+   * @warn Currently doesn't implement timeout logic
    */
   static async fetch(
     url: string,
