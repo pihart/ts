@@ -51,9 +51,8 @@ export class Network {
    *
    * @param filePath The network URL of file to be fetched
    * @return The resource as parsed JSON object
-   * @throws
-   * [[`ResourceNotFoundException`]] if the request fails,
-   * defined by the status being in [200, 300)
+   * @throws {ResourceNotFoundException} if the request fails,
+   * defined by the status not being in [200, 300)
    * @warn Doesn't implement timeout logic
    * @deprecated
    */
@@ -78,9 +77,8 @@ export class Network {
    * @return
    * The XHR as a Promise,
    * with a [[`ResourceNotFoundException`]] in case of rejection
-   * @throws
-   * [[`ResourceNotFoundException`]] if the request fails,
-   * as defined by {@param resolveCondition}
+   * @throws {ResourceNotFoundException} if the request fails,
+   * as defined by the negation of {@param resolveCondition}
    * @warn Doesn't implement timeout logic
    * @deprecated
    */
@@ -115,7 +113,7 @@ export class Network {
    * Use instead of `window.fetch` because it rejects failed transactions.
    *
    * @return The result of the request to the resource, parsed as JSON, if it is `ok`
-   * @throws [[`ResourceNotFoundException`]] if not `ok`
+   * @throws {ResourceNotFoundException} if not `ok`
    */
   static async loadJSON(input: RequestInfo, init?: RequestInit): Promise<any> {
     const response = await Network.fetch(input, init);
@@ -128,7 +126,7 @@ export class Network {
    * Use instead of `window.fetch` because it rejects failed transactions.
    *
    * @return The result of `window.fetch`, if it is `ok`
-   * @throws [[`ResourceNotFoundException`]] if not `ok`
+   * @throws {ResourceNotFoundException} if not `ok`
    */
   static async fetch(
     input: RequestInfo,

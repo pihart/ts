@@ -31,7 +31,7 @@ export namespace Email {
 
   /**
    * Assert using RFC 5322 email validation
-   * @throws {@linkcode InvalidEmailException}
+   * @throws {InvalidEmailException} If {@param str} is not a syntactically valid email
    * @warn Not restrictive; see {@linkcode roughValidate}
    */
   export const roughAssert = (str: string): asserts str is Email => {
