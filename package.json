@@ -1,6 +1,6 @@
 {
   "name": "@mehra/ts",
-  "version": "5.0.2",
+  "version": "5.1.0",
   "description": "Typescript extensions and utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
