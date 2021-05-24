@@ -16,7 +16,12 @@ export type Predicate<T> = (value: T) => boolean;
  * @typeparam T The type of the first element
  * @typeparam U The type of the remaining elements, if different from {@typeparam T}
  */
-export type NonEmptyArray<T, U = T> = [T, ...U[]];
+export type NonEmptyArray<T, U = T> = [T, ...U[]] & {
+  map<V>(
+    callbackfn: (value: T | U, index: number, array: NonEmptyArray<T, U>) => V,
+    thisArg?: any
+  ): NonEmptyArray<V>;
+};
 
 /**
  * {@typeparam T} if {@typeparam Bool}, else `never`
