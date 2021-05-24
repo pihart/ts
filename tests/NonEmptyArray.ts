@@ -16,3 +16,16 @@ import { NonEmptyArray } from "../src";
   // @ts-expect-error 2322
   const d: NonEmptyArray<undefined> = [];
 }
+
+/**
+ * @Test Non-empty arrays are NonEmptyArray
+ */
+{
+  const a: NonEmptyArray<string> = [""];
+
+  const b: NonEmptyArray<any> = [""];
+
+  const c: NonEmptyArray<unknown> = [""];
+
+  const d: NonEmptyArray<undefined> = [undefined];
+}
