@@ -28,3 +28,16 @@ export type RequireSubType<A extends B, B> = IsSubType<A, B>;
  * @see [[`IsSubType`]] for a unidirectional variant.
  */
 export type IsEqual<A, B> = IsSubType<true, IsSubType<A, B> & IsSubType<B, A>>;
+
+/**
+ * Requires {@typeparam C} :< [[`IsSubType`]]`<A, B>`;
+ * otherwise issues a compile-time error.
+ * Has value equal to `IsSubType<A, B>`.
+ *
+ * @warn
+ * Misbehaves for `<never, never, true>`:
+ * errors out though it should be valid.
+ * This is a false negative, and the only one I can find.
+ * I conjecture there are no false positives.
+ */
+export type ExpectEqual<A, B, C extends IsEqual<A, B>> = IsEqual<A, B>;
