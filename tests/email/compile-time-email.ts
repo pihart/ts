@@ -1,4 +1,4 @@
-import { IsEmail } from "../../dist";
+import { IsEmail, RequireEqual } from "../../src";
 
 // https://gist.github.com/cjaoude/fd9910626629b53c4d25
 
@@ -62,6 +62,8 @@ type invalid =
 
   // Make sure not false nor never
   const b: ExpectTrue = true;
+
+  type T = RequireEqual<ExpectTrue, true, true>;
 }
 
 {
@@ -74,4 +76,6 @@ type invalid =
 
   // Make sure not true nor never
   const b: ExpectFalse = false;
+
+  type T = RequireEqual<ExpectFalse, false, true>;
 }
