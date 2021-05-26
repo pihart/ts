@@ -1,4 +1,4 @@
-import { NonEmptyArray } from "../src";
+import { IsSubType, NonEmptyArray, RequireEqual } from "../src";
 
 /**
  * @Test Empty array is not NonEmptyArray
@@ -15,6 +15,8 @@ import { NonEmptyArray } from "../src";
 
   // @ts-expect-error 2322
   const d: NonEmptyArray<undefined> = [];
+
+  type Type<T> = RequireEqual<IsSubType<[], NonEmptyArray<T>>, false, true>;
 }
 
 /**
@@ -28,4 +30,6 @@ import { NonEmptyArray } from "../src";
   const c: NonEmptyArray<unknown> = [""];
 
   const d: NonEmptyArray<undefined> = [undefined];
+
+  type Type<T> = RequireEqual<IsSubType<[T], NonEmptyArray<T>>, true, true>;
 }
