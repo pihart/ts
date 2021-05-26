@@ -1,4 +1,4 @@
-import { IsEmail } from "../../dist";
+import { IsEmail } from "../../src";
 
 // https://gist.github.com/cjaoude/fd9910626629b53c4d25
 
