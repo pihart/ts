@@ -8,8 +8,10 @@ import {
   IsIntDecimal,
   IsNonEmptyAlpha,
   IsNonEmptyAlphaNum,
+  IsSubType,
   IsUnsignedIntDecimal,
   NumChar,
+  RequireEqual,
 } from "../src";
 
 type Alpha =
@@ -104,6 +106,12 @@ type Alphanumeric =
 {
   // @ts-expect-error TS2322
   const e: AlphaChar | NumChar | AlphaNumChar | Digit = "";
+
+  type T = RequireEqual<
+    IsSubType<"", AlphaChar | NumChar | AlphaNumChar | Digit>,
+    false,
+    true
+  >;
 }
 
 /**
@@ -124,6 +132,8 @@ type Alphanumeric =
 
   // Make sure not true nor never
   const b: ExpectFalse = false;
+
+  type T = RequireEqual<ExpectFalse, false, true>;
 }
 
 /**
@@ -139,6 +149,8 @@ type Alphanumeric =
 
   // Make sure not false nor never
   const b: ExpectTrue = true;
+
+  type T = RequireEqual<ExpectTrue, true, true>;
 }
 
 /**
@@ -154,6 +166,8 @@ type Alphanumeric =
 
   // Make sure not true nor never
   const b: ExpectFalse = false;
+
+  type T = RequireEqual<ExpectFalse, false, true>;
 }
 
 /**
@@ -171,6 +185,8 @@ type Alphanumeric =
 
   // Make sure not false nor never
   const b: ExpectTrue = true;
+
+  type T = RequireEqual<ExpectTrue, true, true>;
 }
 
 /**
@@ -190,6 +206,8 @@ type Alphanumeric =
 
   // Make sure not true nor never
   const b: ExpectFalse = false;
+
+  type T = RequireEqual<ExpectFalse, false, true>;
 }
 
 /**
@@ -205,6 +223,8 @@ type Alphanumeric =
 
   // Make sure not false nor never
   const b: ExpectTrue = true;
+
+  type T = RequireEqual<ExpectTrue, true, true>;
 }
 
 /**
@@ -220,6 +240,8 @@ type Alphanumeric =
 
   // Make sure not false nor never
   const b: ExpectTrue = true;
+
+  type T = RequireEqual<ExpectTrue, true, true>;
 }
 
 /**
@@ -235,4 +257,6 @@ type Alphanumeric =
 
   // Make sure not true nor never
   const b: ExpectFalse = false;
+
+  type T = RequireEqual<ExpectFalse, false, true>;
 }
