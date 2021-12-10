@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "jest": "^27.0.1",
-    "typedoc": "^0.20.29",
+    "typedoc": "^0.22.10",
     "typedoc-plugin-custom-tags": "github:pihart/typedoc-plugin-custom-tags#pihart-dist-v1.1.0",
     "typedoc-wrapper": "^6.0.0",
     "typescript": "^4.1.3"
