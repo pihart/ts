@@ -14,7 +14,7 @@
     "docs": "tdx ./src/index.ts"
   },
   "devDependencies": {
-    "jest": "^27.0.1",
+    "jest": "^29.4.3",
     "typedoc": "^0.20.29",
     "typedoc-plugin-custom-tags": "github:pihart/typedoc-plugin-custom-tags#pihart-dist-v1.1.0",
     "typedoc-wrapper": "^6.0.0",
